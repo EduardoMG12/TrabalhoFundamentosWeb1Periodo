@@ -16,12 +16,18 @@ html{
     --color-topics-background: #2694D1;
     --color-font-black: #02111B;
     --color-font-white: #FFFFFF;
-  }
+    --padding-lateral-article:9rem
+}
+@media (max-width:990px) {
+  :root{
+    --padding-lateral-article:4.5rem
+  }   
+}
 
 header{
     font-size: 2rem;
     padding: 1rem 4rem;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,7 +71,7 @@ header:nth-child(1) ul{
 /* animation nav hover*/
 
     nav ul li{
-        transition: 0.4s ease-in-out all;
+        transition: 0.5s ease-in-out all;
     }
     nav ul li a{
         color: var(--color-font-white);
@@ -76,10 +82,65 @@ header:nth-child(1) ul{
         background-color: var(--color-font-white);
         border-radius: 1.7rem;
         color: var(--background-header);
-        transform: scale(1.1);
+        transform: translateY(0.2rem) rotate(2deg) scale(1.1);
         
     }
     nav ul li:hover a{
         padding: 1rem 1.4rem;
         color: var(--background-header);
     }
+
+
+article{
+    width: 100%;
+    padding: 0 var(--padding-lateral-article);
+}
+
+article .sectionArticle .titleArticle{
+    padding-top: 5rem;
+    font-size: 4rem;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--background-header);
+    -webkit-text-fill-color: transparent;
+    font-family: Impact, Charcoal, sans-serif;
+    transform: translateX(-3rem);
+    
+}
+
+
+article .sectionArticle{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    padding-bottom: 5rem;
+
+}
+
+article .sectionArticle .subtitleArticle{
+    font-size: 2.5rem;
+    transform: translateX(-3rem);
+
+}
+
+article .sectionArticle .paragraphArticle{
+    font-size: 2rem;
+
+}
+.imgArticle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5rem;
+    padding-bottom: 5rem;
+    width: 100%;
+}
+.imgArticle img{
+        object-fit: contain;
+        max-width: 100rem;
+    }
+    @media (max-width:1030px) {
+    .imgArticle img{
+            max-width: 80%;
+        }
+ 
+}
